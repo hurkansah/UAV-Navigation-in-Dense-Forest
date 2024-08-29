@@ -1,0 +1,132 @@
+    1  nvidia-smi
+    2  sudo ubuntu-drivers list
+    3  sudo ubuntu-drivers install
+    4  nvidia-smi
+    5  sudo apt install nvidia-utils-535 
+    6  sudo apt.get update
+    7  sudo apt-get update
+    8  sudo apt install dkms
+    9  sudo apt install nvidia-utils-535 
+   10  sudo apt install -y libnvidia-fbc1-535 libnvidia-cfg1-535 xserver-xorg-video-nvidia-535 libnvidia-encode-535 libnvidia-decode-535 libnvidia-extra-535 libnvidia-compute-535
+   11  sudo apt --fix-broken install
+   12  sudo apt install nvidia-utils-535 
+   13  nvidia-smi
+   14  sudo apt install -y nvidia-driver-535
+   15  nvidia-smi
+   16  nvidia-settings
+   17  nvidia-smi
+   18  nvidia-settings
+   19  wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin
+   20  sudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600
+   21  wget https://developer.download.nvidia.com/compute/cuda/12.2.0/local_installers/cuda-repo-ubuntu2004-12-2-local_12.2.0-535.54.03-1_amd64.deb
+   22  nvidia-smi
+   23  cd /ev
+   24  cd /home/sebnem/
+   25  cd /ev
+   26  cd /Ev
+   27  nvidia-smi
+   28  wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin
+   29  sudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600
+   30  wget https://developer.download.nvidia.com/compute/cuda/12.2.0/local_installers/cuda-repo-ubuntu2004-12-2-local_12.2.0-535.54.03-1_amd64.deb
+   31  sudo dpkg -i cuda-repo-ubuntu2004-12-2-local_12.2.0-535.54.03-1_amd64.deb.2
+   32  nvcc --versions
+   33  sudo apt-get update
+   34  sudo cp /var/cuda-repo-ubuntu2004-12-2-local/cuda-*-keyring.gpg /usr/share/keyrings/
+   35  sudo apt-get update
+   36  sudo apt-get -y install cuda
+   37  nvcc --versions
+   38  cuda
+   39  nvcc --version
+   40  /usr/local/cuda/bin/nvcc --version
+   41  sudo apt-get install ros-noetic-mavros ros-noetic-mavros-extras ros-noetic-mavros-msgs libncurses5-dev python3-pip libgstreamer1.0-dev python-jinja2 python3-pip python3-testresources libignition-math4 libgazebo11-dev
+   42  nvidia-smi
+   43  sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+   44  sudo apt install curl
+   45  curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+   46  sudo apt update
+   47  sudo apt install ros-noetic-desktop-full
+   48  source /opt/ros/noetic/setup.bash
+   49  roscore 
+   50  sudo apt-get install ros-noetic-mavros ros-noetic-mavros-extras ros-noetic-mavros-msgs libncurses5-dev python3-pip libgstreamer1.0-dev python-jinja2 python3-pip python3-testresources libignition-math4 libgazebo11-dev
+   51  pip3 install --user empy toml numpy packaging jinja2
+   52  pip3 install numpy toml empy packaging
+   53  sudo apt upgrade libignition-math4
+   54  wget https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh
+   55  sudo bash ./install_geographiclib_datasets.sh
+   56  git clone https://github.com/PX4/PX4-Autopilot.git
+   57  sudo apt install git
+   58  git clone https://github.com/PX4/PX4-Autopilot.git
+   59  cd PX4-Autopilot/
+   60  git checkout 71db090
+   61  git submodule sync --recursive
+   62  git submodule update --init --recursive
+   63  bash ./Tools/setup/ubuntu.sh
+   64  ERROR: pandas 2.0.3 has requirement numpy>=1.20.3; python_version < "3.10", but you'll have numpy 1.17.4 which is incompatible.
+   65  sudo apt upgrade libignition-math4
+   66  make px4_sitl_default gazebo
+   67  killall gzserver
+   68  cd ..
+   69  cd RAT_ws/src/PROJECT_AC2/E2ES/3rdPartLib/
+   70  sudo ./install3rdPartLib.sh
+   71  sudo apt install  ros-noetic-sophus
+   72  sudo ln -s /usr/include/eigen3/Eigen /usr/include/Eigen 
+   73  cd 
+   74  cd RAT_ws/
+   75  sudo sh     -c 'echo "deb http://packages.ros.org/ros/ubuntu `lsb_release -sc` main" \
+   76          > /etc/apt/sources.list.d/ros-latest.list'
+   77  wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
+   78  sudo apt-get update
+   79  sudo apt-get install python3-catkin-tools
+   80  catkin build e2es 
+   81  cd src/PROJECT_AC2/E2ES/
+   82  ./sim.sh
+   83  killall gzserver
+   84  ./sim.sh
+   85  killall gzserver
+   86  killall -9  gzserver
+   87  ./sim.sh
+   88  killall -9  gzserver
+   89  cd 
+   90  sudo apt-get install libarmadillo-dev ros_noetic_nlopt
+   91  git clone https://github.com/stevengj/nlopt.git
+   92  cd nlopt
+   93  mkdir build
+   94  cd build
+   95  cmake ..
+   96  make
+   97  sudo make install
+   98  cd ..
+   99  cd 
+  100  cd RAT_ws/
+  101  catkin clean
+  102  catkin build multi_map_surver
+  103  catkin build multi_map_server 
+  104  catkin config --merge-devel
+  105  catkin build
+  106  catkin clean
+  107  catkin build
+  108  catkin build multi_map_server 
+  109  catkin build
+  110  source devel/setup.bash 
+  111  pip3 install scipy
+  112  ./sim.sh 
+  113  kilall -9 gzserver
+  114  killall -9 gzserver
+  115  ./sim.sh 
+  116  killall -9 gzserver
+  117  cd
+  118  cd RAT_ws/
+  119  source devel/setup.bash 
+  120  roslaunch e2es keyboard_ctr.launch 
+  121  cd src/PROJECT_AC2/px4_fast_planner/scripts/
+  122  chmod +x GoalSender.py 
+  123  chmod +x waypoint_publisher.py 
+  124  chmod +x trajectory_msg_converter.py 
+  125  chmod +x camera_pose_publisher.py 
+  126  cd
+  127  cd RAT_ws/
+  128  source devel/setup.bash 
+  129  rosrun px4_fast_planner GoalSender.py 
+  130  sudo cp libpose_utils.so /usr/lib
+  131  history
+
