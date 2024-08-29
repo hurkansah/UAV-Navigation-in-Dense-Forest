@@ -1,0 +1,6 @@
+devel_space: /home/rat-upb-pc1/planner/src/Fast-Planner/uav_simulator/Utils/multi_map_server/devel
+install: false
+install_space: /home/rat-upb-pc1/planner/src/Fast-Planner/uav_simulator/Utils/multi_map_server/install
+profile: default
+source_space: /home/rat-upb-pc1/planner/src/Fast-Planner/uav_simulator/Utils/multi_map_server/src
+workspace: /home/rat-upb-pc1/planner/src/Fast-Planner/uav_simulator/Utils/multi_map_server

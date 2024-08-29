@@ -1,0 +1,23 @@
+<launch>
+    <param name="use_sim_time" value="false" />
+
+    <!-- Main node -->
+    <node name="orb_slam3" pkg="orb_slam3_ros" type="ros_mono" output="screen">
+        <!-- change the topics according to the dataset -->
+        <remap from="/camera/image_raw" to="/camera/color/image_raw"/>
+
+        <!-- Parameters for original ORB-SLAM3 -->
+        <param name="voc_file"      type="string" value="$(find orb_slam3_ros)/orb_slam3/Vocabulary/ORBvoc.txt.bin"/>
+        <param name="settings_file" type="string" value="$(find orb_slam3_ros)/config/Monocular/E2ES_cam.yaml"/>
+
+        <!-- Parameters for ROS -->
+        <param name="world_frame_id"    type="string"   value="world" />
+        <param name="cam_frame_id"      type="string"   value="camera" />
+        <param name="enable_pangolin"   type="bool"     value="true" />
+    </node>
+    
+    <!-- Visualization -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find orb_slam3_ros)/config/orb_slam3_no_imu.rviz" output="screen" />
+    
+
+</launch>
