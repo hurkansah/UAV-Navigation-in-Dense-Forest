@@ -1,0 +1,27 @@
+<launch>
+	<node pkg="octomap_server" type="octomap_server_node" name="octomap_server1">
+		<param name="resolution" value="0.01" />
+		
+		<param name="frame_id" type="string" value="map" />		
+		
+		<remap from="cloud_in" to="/orb_slam3/all_points" />
+		
+		<param name="pointcloud_min_x" type="double" value="-35.0" />
+		<param name="pointcloud_max_x" type="double" value="35.0" />
+
+		<param name="pointcloud_min_y" type="double" value="-35.0" />
+		<param name="pointcloud_max_y" type="double" value="35.0" />
+		<param name="pointcloud_min_z" type="double" value="0.0" />
+		<param name="pointcloud_max_z" type="double" value="10.0" />
+		<param name="occupancy_min_z" type="double" value="0.0" />
+		<param name="occupancy_max_z" type="double" value="10" />
+		<param name="height_map" type="bool" value="false" />
+		<param name="filter_ground" type="bool" value="false" />
+
+		<param name="sensor_model/max_range" value="10.0" />
+		<param name="sensor_model/hit" type="double" value="0.8" />
+		<param name="sensor_model/miss" type="double" value="0.4" />
+		<param name="sensor_model/min" type="double" value="0.12" />
+		<param name="sensor_model/max" type="double" value="0.99" />
+	</node>
+</launch>

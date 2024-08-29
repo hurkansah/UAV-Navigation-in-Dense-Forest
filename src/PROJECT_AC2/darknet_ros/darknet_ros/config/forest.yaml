@@ -1,0 +1,14 @@
+yolo_model:
+
+  config_file:
+    name: forest.cfg
+  weight_file:
+    name: forest.weights
+  threshold:
+    value: 0.1
+  detection_classes:
+    names:
+      - hard
+      - neutral
+      - soft
+

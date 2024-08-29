@@ -1,0 +1,39 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/rat-pc2/RAT_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/rat-pc2/RAT_ws/src/PROJECT_AC2/Fast-Planner/fast_planner/bspline/include/**",
+        "/home/rat-pc2/RAT_ws/src/PROJECT_AC2/Fast-Planner/fast_planner/bspline_opt/include/**",
+        "/home/rat-pc2/RAT_ws/src/PROJECT_AC2/mavros_controllers/controller_msgs/include/**",
+        "/home/rat-pc2/RAT_ws/src/PROJECT_AC2/E2ES/include/**",
+        "/home/rat-pc2/RAT_ws/src/PROJECT_AC2/mavros_controllers/geometric_controller/include/**",
+        "/home/rat-pc2/RAT_ws/src/PROJECT_AC2/Fast-Planner/uav_simulator/Utils/multi_map_server/include/**",
+        "/home/rat-pc2/RAT_ws/src/PROJECT_AC2/Fast-Planner/fast_planner/path_searching/include/**",
+        "/home/rat-pc2/RAT_ws/src/PROJECT_AC2/Fast-Planner/fast_planner/plan_env/include/**",
+        "/home/rat-pc2/RAT_ws/src/PROJECT_AC2/Fast-Planner/fast_planner/plan_manage/include/**",
+        "/home/rat-pc2/RAT_ws/src/PROJECT_AC2/Fast-Planner/fast_planner/poly_traj/include/**",
+        "/home/rat-pc2/RAT_ws/src/PROJECT_AC2/Fast-Planner/uav_simulator/Utils/pose_utils/include/**",
+        "/home/rat-pc2/RAT_ws/src/PROJECT_AC2/Fast-Planner/uav_simulator/Utils/quadrotor_msgs/include/**",
+        "/home/rat-pc2/RAT_ws/src/PROJECT_AC2/Fast-Planner/uav_simulator/so3_control/include/**",
+        "/home/rat-pc2/RAT_ws/src/PROJECT_AC2/Fast-Planner/uav_simulator/so3_disturbance_generator/include/**",
+        "/home/rat-pc2/RAT_ws/src/PROJECT_AC2/Fast-Planner/uav_simulator/so3_quadrotor_simulator/include/**",
+        "/home/rat-pc2/RAT_ws/src/PROJECT_AC2/Fast-Planner/fast_planner/traj_utils/include/**",
+        "/home/rat-pc2/RAT_ws/src/PROJECT_AC2/mavros_controllers/trajectory_publisher/include/**",
+        "/home/rat-pc2/RAT_ws/src/PROJECT_AC2/Fast-Planner/uav_simulator/Utils/uav_utils/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

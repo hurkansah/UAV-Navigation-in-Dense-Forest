@@ -1,0 +1,54 @@
+<launch>
+
+<!-- Publish camera pose in world frame (read from EKF pose estimates and published over TF for octomap generation)-->
+
+<node pkg="octomap_server" type="octomap_server_node" name="octomap_server">
+		<param name="resolution" value="0.1" />
+		
+		<!-- fixed map frame (set to 'map' if SLAM or localization running!) -->
+		<param name="frame_id" type="string" value="map" />
+		
+		<!-- maximum range to integrate (speedup!) -->
+		<param name="sensor_model/max_range" value="70" />
+		
+		<!-- data source to integrate (PointCloud2) -->
+		<remap from="cloud_in" to="/orb_slam3/tracked_points" />
+	
+	</node>
+	
+	
+
+<!-- PCL Voxel Filter (Downsampling the point cloud)-->
+<node pkg="nodelet" type="nodelet" name="pcl_manager" args="manager" output="screen" />
+
+  <!-- Run a VoxelGrid filter to clean NaNs and downsample the data -->
+  <node pkg="nodelet" type="nodelet" name="voxel_grid" args="load pcl/VoxelGrid pcl_manager" output="screen">
+    <remap from="~input" to="/orb_slam3/tracked_points" />
+    <rosparam>
+      filter_field_name: z
+      filter_limit_min: 0.01
+      filter_limit_max: 8
+      filter_limit_negative: False
+      leaf_size: 0.10
+    </rosparam>
+
+    <rosparam>
+      filter_field_name: x
+      filter_limit_min: -6
+      filter_limit_max: 6
+      filter_limit_negative: False
+      leaf_size: 0.10
+    </rosparam>
+
+    <rosparam>
+      filter_field_name: y
+      filter_limit_min: -6
+      filter_limit_max: 6
+      filter_limit_negative: False
+      leaf_size: 0.10
+    </rosparam>
+
+</node>
+
+
+</launch>
