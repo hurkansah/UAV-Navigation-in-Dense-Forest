@@ -7,6 +7,9 @@ This project presents a navigation framework for autonomous UAVs operating in cl
 
 [![Autonomous UAV Navigation in Complex Environments]](https://youtu.be/CqKVABOreqM?si=ZbR6wUiS99nuvExq)
 
+<p align="center">
+  <iframe width="560" height="315" src=" https://youtu.be/CqKVABOreqM?si=ZbR6wUiS99nuvExq" frameborder="0" allowfullscreen></iframe>
+</p>
 
 
 
