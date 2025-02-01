@@ -118,25 +118,19 @@ Please check the other project dependencies and installation paths.
 
 ## Step: Run the Simulation
 
-1.) Launch the ROS environment
-'''
-source devel/setup.bash
-roslaunch e2es keyboard_ctr.launch
-'''
-
-2.) Start the simulation
+1.) Start the simulation
 
 ```
 ./sim.sh
 ```
 
-3.) Start the ORB-SLAM3
+2.) Start the ORB-SLAM3
 
 ```
 roslaunch orb_slam3_ros euroc_stereo_E2ES.launch
 ```
 
-4.) Run the Goal sender 
+3.) Run the Goal sender 
 
 ```
 rosrun px4_fast_planner GoalSender.py 
