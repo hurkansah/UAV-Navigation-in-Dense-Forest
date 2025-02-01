@@ -53,7 +53,11 @@ Mzahana, Integration of Fast-Planner with PX4 autopilot for multi-rotor fast nav
 This is a really helpful implementation for understanding TF frames needed by fast-planner and integration of the geometric controller. 
 
 # Simulation
-![Autonomous UAV in Gazebo](resources/drone_gazebo.png) 
+
+<p align="center">
+<img src="resources/drone_gazebo.png" alt="Autonomous UAV in Gazebo" width="400"/>
+</p>
+
 
 Simulation experiments were conducted using a desktop computer with an Nvidia RTX 3060 graphics card. To achieve better results, Nvidia CUDA and CUDNN plugins were utilized. The experiments were performed on Ubuntu 20.04 LTS and ROS Noetic within PX4’s Software-In-The-Loop (SITL) environment. The Gazebo simulator version 11.0 was used with a simulated Intel RealSense D435 depth camera plugin connected to the Forest Drone shown in Figure. 
 
@@ -72,7 +76,7 @@ Integration with reinforcement learning for adaptive flight behavior.
 To evaluate the fast planner's performance, three scenarios were simulated using a long, 60-meter road. In each scenario, the system was assessed for potential collisions with the air vehicle. As illustrated in Figure, the planned path is depicted by the green lines. The left side of each sub-figure shows a top-down view from the Gazebo model, while the right side displays the corresponding RVIZ visualization of the ESDF map and trajectory.
 
 <p align="center">
-<img src="resources/simscenario.png" alt="Simulation Scenarios" width="600"/>
+<img src="resources/simscenario.png" alt="Simulation Scenarios" width="400"/>
 </p>
 
 Virtualization of the PointCloud data is only possible in RVIZ because of the data type saved by ORB-SLAM3. This data format, likely a proprietary binary format (".osa"), is difficult to interpret directly. RVIZ acts as a bridge to visualize this data, helping represent potential obstacles and empty paths within the forest environment. As depicted in Figure, in a 50x50 m forest area, the yellow points (point clouds), illustrate the possible places of the trees on the map. Pink and blue shapes are the ESDF map of the trees. Yellow points have more side of view than the yellow one (because ESDF uses depth information and small side view) so we can have more field of view information using ORB-SLAM3. Besides this, the ESDF map has distance information between the quadcopter and the tree. So, it gives really important data to draw the trajectory. In the ESDF map,  the pink color means that it is the most possible point air vehicle can hit, and the blues are the bushes which are the objects that have a low possibility of hitting. In the end, the green color is the ground which shows the takeoff point. 
