@@ -1,6 +1,5 @@
 # Autonomous UAV Navigation in Complex Environments
 
-# Overview
 This project presents a navigation framework for autonomous UAVs operating in cluttered, GPS-denied environments such as forests. The system integrates ORB-SLAM3, a path planner (Fast Planner / RAPTOR), and object detection to ensure safe, real-time trajectory planning.
 
 # Key Features
@@ -12,23 +11,40 @@ Geometric Control: Ensures stable and accurate trajectory following.
 System Components
 
 # Visual SLAM
+[ORBSLAM3 ROS PACKAGE](https://github.com/thien94/orb_slam3_ros)
+A ROS implementation of ORB_SLAM3 by thien94. 
+
 -ORB-SLAM3 (stereo) for real-time mapping and localization.
-Integration with Intel RealSense D435 for depth sensing.
+Integration with Intel RealSense D435 for depth sensing. Correcting axes coordinates. 
 
 # Path Planning
 [Fast Planener](https://github.com/HKUST-Aerial-Robotics/Fast-Planner)
 
 -RAPTOR planner generates optimized paths using ESDF-based trajectory smoothing.
 Collision avoidance and dynamic re-planning in real-time.
+To connect with controller and flight manager, the code is arranged
 
 # Controller
+[Geometric Controller](https://github.com/Jaeyoung-Lim/mavros_controllers)
 -Geometric tracking controller for robust flight stability.
 PID-based tuning with integral compensation.
-Object Detection
 
--Trained YOLOv8 model with 265K+ labeled forest images.
+# Object Detection
+
+[YoloV3](https://github.com/leggedrobotics/darknet_ros)
+-Trained YOLOv3 model with 265K+ labeled forest images.
 Smart polygon annotations for improved accuracy.
-Simulation Setup
+
+# Global Planner (A Manager)
+
+A local planner utilizes goal information to generate safe trajectories for the geometric controller, avoiding collisions with obstacles. This information is managed by a  dedicated system that assigns new goals after each completed trajectory, ensuring continuous operation. If the planner detects obstacles or object detection identifies hard objects, the state manager selects the next goal from its pre-defined list. It’s
+important to note that this component is not a robust global planner for environment exploration. 
+![Autonomous UAV in Gazebo](resources/statemanager.png) 
+
+# Simulation
+![Autonomous UAV in Gazebo](resources/drone_gazebo.png) 
+
+Simulation experiments were conducted using a desktop computer with an Nvidia RTX 3060 graphics card. To achieve better results, Nvidia CUDA and CUDNN plugins were utilized. The experiments were performed on Ubuntu 20.04 LTS and ROS Noetic within PX4’s Software-In-The-Loop (SITL) environment. The Gazebo simulator version 11.0 was used with a simulated Intel RealSense D435 depth camera plugin connected to the Forest Drone shown in Figure. 
 
 -PX4 SITL and Gazebo 11.
 Test cases include various forest densities and obstacle layouts.
@@ -40,9 +56,3 @@ Future Work
 Real-world testing with an actual drone platform.
 Extended multi-UAV navigation for cooperative exploration.
 Integration with reinforcement learning for adaptive flight behavior.
-
-![Autonomous UAV in Gazebo](resources/drone_gazebo.png) 
-
-Simulation experiments were conducted using a desktop computer with an Nvidia RTX 3060 graphics card. To achieve better results, Nvidia CUDA and CUDNN plugins were utilized. The experiments were performed on Ubuntu 20.04 LTS and ROS Noetic within PX4’s Software-In-The-Loop (SITL) environment. The Gazebo simulator version 11.0 was used with a simulated Intel RealSense D435 depth camera plugin connected to the Forest Drone shown in Figure. 
-
-
