@@ -41,7 +41,7 @@ leggedrobotics, YOLO ROS: Real-Time Object Detection for ROS.
 Smart polygon annotations for improved accuracy.
 
 <p align="center">
-<img src="resources/objectdetection.png" alt="Simulation Environment Object Detection Results" width="500"/>
+<img src="resources/objectdetection.png" alt="Simulation Environment Object Detection Results" width="600"/>
 </p>
 
 
