@@ -2,6 +2,8 @@
 
 This project presents a navigation framework for autonomous UAVs operating in cluttered, GPS-denied environments such as forests. The system integrates ORB-SLAM3, a path planner (Fast Planner / RAPTOR), and object detection to ensure safe, real-time trajectory planning.
 
+
+
 # Key Features
 Simulation Environment: Gazebo-based forest simulations for testing.
 SLAM & Localization: ORB-SLAM3 with stereo vision for accurate obstacle detection.
