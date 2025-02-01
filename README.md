@@ -40,6 +40,12 @@ leggedrobotics, YOLO ROS: Real-Time Object Detection for ROS.
 -Trained YOLOv3 model with 265K+ labeled forest images.
 Smart polygon annotations for improved accuracy.
 
+<p align="center">
+<img src="resources/objectdetection.png" alt="Simulation Environment Object Detection Results" width="500"/>
+</p>
+
+
+
 # Global Planner (A Manager)
 
 A local planner utilizes goal information to generate safe trajectories for the geometric controller, avoiding collisions with obstacles. This information is managed by a  dedicated system that assigns new goals after each completed trajectory, ensuring continuous operation. If the planner detects obstacles or object detection identifies hard objects, the state manager selects the next goal from its pre-defined list. It’s
