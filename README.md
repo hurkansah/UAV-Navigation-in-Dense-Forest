@@ -11,7 +11,7 @@ Geometric Control: Ensures stable and accurate trajectory following.
 System Components
 
 # Visual SLAM
-[ORBSLAM3 ROS PACKAGE](https://github.com/thien94/orb_slam3_ros)
+[ORB-SLAM3 ROS PACKAGE](https://github.com/thien94/orb_slam3_ros)
 A ROS implementation of ORB_SLAM3 by thien94. 
 
 -ORB-SLAM3 (stereo) for real-time mapping and localization.
@@ -20,18 +20,23 @@ Integration with Intel RealSense D435 for depth sensing. Correcting axes coordin
 # Path Planning
 [Fast Planener](https://github.com/HKUST-Aerial-Robotics/Fast-Planner)
 
+HKUST-Aerial-Robotics, A Robust and Efficient Trajectory Planner for Quadrotors
+
 -RAPTOR planner generates optimized paths using ESDF-based trajectory smoothing.
 Collision avoidance and dynamic re-planning in real-time.
 To connect with controller and flight manager, the code is arranged
 
 # Controller
 [Geometric Controller](https://github.com/Jaeyoung-Lim/mavros_controllers)
+Jaeyoung-Lim, Aggressive trajectory tracking using mavros for PX4 enabled vehicles.
+
 -Geometric tracking controller for robust flight stability.
 PID-based tuning with integral compensation.
 
 # Object Detection
-
 [YoloV3](https://github.com/leggedrobotics/darknet_ros)
+leggedrobotics, YOLO ROS: Real-Time Object Detection for ROS.
+
 -Trained YOLOv3 model with 265K+ labeled forest images.
 Smart polygon annotations for improved accuracy.
 
@@ -40,6 +45,12 @@ Smart polygon annotations for improved accuracy.
 A local planner utilizes goal information to generate safe trajectories for the geometric controller, avoiding collisions with obstacles. This information is managed by a  dedicated system that assigns new goals after each completed trajectory, ensuring continuous operation. If the planner detects obstacles or object detection identifies hard objects, the state manager selects the next goal from its pre-defined list. It’s
 important to note that this component is not a robust global planner for environment exploration. 
 ![Autonomous UAV in Gazebo](resources/statemanager.png) 
+
+# Integration with PX4, Geometric Controller and Fast Planner 
+[PX4 Fast Planner](https://github.com/mzahana/px4_fast_planner)
+Mzahana, Integration of Fast-Planner with PX4 autopilot for multi-rotor fast navigation with obstacle avoidance.
+
+This is a really helpful implementation for understanding TF frames needed by fast-planner and integration of the geometric controller. 
 
 # Simulation
 ![Autonomous UAV in Gazebo](resources/drone_gazebo.png) 
