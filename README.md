@@ -12,7 +12,7 @@ Geometric Control: Ensures stable and accurate trajectory following.
 System Components
 Visual SLAM
 
-#ORB-SLAM3 (stereo) for real-time mapping and localization.
+-ORB-SLAM3 (stereo) for real-time mapping and localization.
 Integration with Intel RealSense D435 for depth sensing.
 Path Planning
 
@@ -39,4 +39,8 @@ Real-world testing with an actual drone platform.
 Extended multi-UAV navigation for cooperative exploration.
 Integration with reinforcement learning for adaptive flight behavior.
 
- 
+![Autonomous UAV in Gazebo](resources/drone_gazebo.png) 
+
+Simulation experiments were conducted using a desktop computer with an Nvidia RTX 3060 graphics card. To achieve better results, Nvidia CUDA and CUDNN plugins were utilized. The experiments were performed on Ubuntu 20.04 LTS and ROS Noetic within PX4’s Software-In-The-Loop (SITL) environment. The Gazebo simulator version 11.0 was used with a simulated Intel RealSense D435 depth camera plugin connected to the Forest Drone shown in Figure. 
+
+
