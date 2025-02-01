@@ -10,16 +10,18 @@ Path Planning: Fast Planner (RAPTOR) for real-time, collision-free trajectory ge
 Object Detection: YOLOv8-based model distinguishing hard (trees) and soft (bushes) objects.
 Geometric Control: Ensures stable and accurate trajectory following.
 System Components
-Visual SLAM
 
+# Visual SLAM
 -ORB-SLAM3 (stereo) for real-time mapping and localization.
 Integration with Intel RealSense D435 for depth sensing.
-Path Planning
+
+# Path Planning
+[Fast Planener](https://github.com/HKUST-Aerial-Robotics/Fast-Planner)
 
 -RAPTOR planner generates optimized paths using ESDF-based trajectory smoothing.
 Collision avoidance and dynamic re-planning in real-time.
-Controller
 
+# Controller
 -Geometric tracking controller for robust flight stability.
 PID-based tuning with integral compensation.
 Object Detection
