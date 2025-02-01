@@ -126,9 +126,9 @@ roslaunch e2es keyboard_ctr.launch
 
 2.) Start the simulation
 
-'''
+```
 ./sim.sh
-'''
+```
 
 3.) Start the ORB-SLAM3
 
