@@ -69,9 +69,11 @@ Extended multi-UAV navigation for cooperative exploration.
 Integration with reinforcement learning for adaptive flight behavior.
 
 # Simulation Scenarios
-
+To evaluate the fast planner's performance, three scenarios were simulated using a long, 60-meter road. In each scenario, the system was assessed for potential collisions with the air vehicle. As illustrated in Figure \ref{fastplanner_sim}, the planned path is depicted by the green lines. The left side of each sub-figure shows a top-down view from the Gazebo model, while the right side displays the corresponding RVIZ visualization of the ESDF map and trajectory.
 ![Simulation Scenarios](resources/simscenario.png)
 
-![Medium Dense Forest SLAM](resources/mediumslam.png)
+
+<img src="resources/mediumslam.png" alt="Medium Dense Forest SLAM" width="600"/>
+
 
 ![Spare Dense Forest SLAM](resources/spareslam.png)  
