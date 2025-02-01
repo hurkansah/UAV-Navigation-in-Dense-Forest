@@ -76,5 +76,5 @@ To evaluate the fast planner's performance, three scenarios were simulated using
 
 <img src="resources/mediumslam.png" alt="Medium Dense Forest SLAM" width="600"/>
 
-<img src="resources/sparemslam.png" alt="Spare Dense Forest SLAM" width="600"/>
+<img src="resources/spareslam.png" alt="Spare Dense Forest SLAM" width="600"/>
 
