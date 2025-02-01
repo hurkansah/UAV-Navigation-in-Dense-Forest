@@ -1,4 +1,4 @@
-## Contributors ✨
+ ## Contributors ✨
 - [@hurkansah](https://github.com/hurkansah) 
 
 # Autonomous UAV Navigation in Complex Environments
@@ -132,13 +132,13 @@ roslaunch e2es keyboard_ctr.launch
 
 3.) Start the ORB-SLAM3
 
-'''
+```
 roslaunch orb_slam3_ros euroc_stereo_E2ES.launch
-'''
+```
 
 4.) Run the Goal sender 
 
-'''
+```
 rosrun px4_fast_planner GoalSender.py 
-'''
+```
 
