@@ -44,7 +44,7 @@ Smart polygon annotations for improved accuracy.
 
 A local planner utilizes goal information to generate safe trajectories for the geometric controller, avoiding collisions with obstacles. This information is managed by a  dedicated system that assigns new goals after each completed trajectory, ensuring continuous operation. If the planner detects obstacles or object detection identifies hard objects, the state manager selects the next goal from its pre-defined list. It’s
 important to note that this component is not a robust global planner for environment exploration. 
-![State Manager](resources/statemanager.png) 
+![State Manager](resources/statemanager.pdf) 
 
 # Integration with PX4, Geometric Controller and Fast Planner 
 [PX4 Fast Planner](https://github.com/mzahana/px4_fast_planner)
