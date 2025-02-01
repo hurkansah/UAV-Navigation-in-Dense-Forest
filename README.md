@@ -1,7 +1,11 @@
+## Contributors ✨
+
+
+- [hurkansah]]https://github.com/hurkansah) - Idea & Implementation
+
 # Autonomous UAV Navigation in Complex Environments
 
 This project presents a navigation framework for autonomous UAVs operating in cluttered, GPS-denied environments such as forests. The system integrates ORB-SLAM3, a path planner (Fast Planner / RAPTOR), and object detection to ensure safe, real-time trajectory planning.
-
 
 
 # Key Features
