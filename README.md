@@ -18,7 +18,7 @@ System Components
 [ORB-SLAM3 ROS PACKAGE](https://github.com/thien94/orb_slam3_ros)
 A ROS implementation of ORB_SLAM3 by thien94. 
 
--ORB-SLAM3 (stereo) for real-time mapping and localization.
+- ORB-SLAM3 (stereo) for real-time mapping and localization.
 Integration with Intel RealSense D435 for depth sensing. Correcting axes coordinates. 
 
 # Path Planning
@@ -26,7 +26,7 @@ Integration with Intel RealSense D435 for depth sensing. Correcting axes coordin
 
 HKUST-Aerial-Robotics, A Robust and Efficient Trajectory Planner for Quadrotors
 
--RAPTOR planner generates optimized paths using ESDF-based trajectory smoothing.
+- RAPTOR planner generates optimized paths using ESDF-based trajectory smoothing.
 Collision avoidance and dynamic re-planning in real-time.
 To connect with controller and flight manager, the code is arranged
 
@@ -63,7 +63,9 @@ Mzahana, Integration of Fast-Planner with PX4 autopilot for multi-rotor fast nav
 This is a really helpful implementation for understanding TF frames needed by fast-planner and integration of the geometric controller. 
 
 # Simulation
-[forest generator](https://github.com/hurkansah/forest_gen)
+- To use the depth camera sensor plugins, [E2ES](https://github.com/HKPolyU-UAV/E2ES), A complete MAV simulation on Gazebo is used.
+
+- [forest generator](https://github.com/hurkansah/forest_gen)
 hurkansah, a Random forest generator with using different types of bushes and trees to create test environments for Gazebo
 
 The process of generating the forest generation was modified and adapted to this project, from the forest generation script employed in Oleynikova et al. In their research, Oleynikova et al developed a script for creating randomized forests that are openly accessible for research objectives. This script plays a crucial role in uniformly selecting the position, direction, and density of the trees. Additionally, it generates the world description file.
@@ -107,5 +109,36 @@ Furthermore, the Figure also has the position information of the camera and keyf
 # Installation Guide: Autonomous UAV Navigation System
 This guide provides step-by-step instructions for installing the necessary dependencies, drivers, and software for the project.
 
-<!-- comment written in markdown -->
+## Step 1: Install NVIDIA Drivers
+## Step 2: Install CUDA
+.
+.
+.
+Please check the other project dependencies and installation paths.
+
+## Step: Run the Simulation
+
+1.) Launch the ROS environment
+'''
+source devel/setup.bash
+roslaunch e2es keyboard_ctr.launch
+'''
+
+2.) Start the simulation
+
+'''
+./sim.sh
+'''
+
+3.) Start the ORB-SLAM3
+
+'''
+roslaunch orb_slam3_ros euroc_stereo_E2ES.launch
+'''
+
+4.) Run the Goal sender 
+
+'''
+rosrun px4_fast_planner GoalSender.py 
+'''
 
