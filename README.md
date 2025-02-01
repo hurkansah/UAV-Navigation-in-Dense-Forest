@@ -1,7 +1,5 @@
 ## Contributors ✨
-
-
-- [hurkansah]]https://github.com/hurkansah) - Idea & Implementation
+- [hurkansah]https://github.com/hurkansah) 
 
 # Autonomous UAV Navigation in Complex Environments
 
