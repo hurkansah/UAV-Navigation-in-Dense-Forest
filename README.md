@@ -53,6 +53,10 @@ Mzahana, Integration of Fast-Planner with PX4 autopilot for multi-rotor fast nav
 This is a really helpful implementation for understanding TF frames needed by fast-planner and integration of the geometric controller. 
 
 # Simulation
+[forest generator](https://github.com/hurkansah/forest_gen)
+hurkansah, a Random forest generator with using different types of bushes and trees to create test environments for Gazebo
+
+The process of generating the forest generation was modified and adapted to this project, from the forest generation script employed in Oleynikova et al. In their research, Oleynikova et al developed a script for creating randomized forests that are openly accessible for research objectives. This script plays a crucial role in uniformly selecting the position, direction, and density of the trees. Additionally, it generates the world description file.
 
 <p align="center">
 <img src="resources/drone_gazebo.png" alt="Autonomous UAV in Gazebo" width="500"/>
