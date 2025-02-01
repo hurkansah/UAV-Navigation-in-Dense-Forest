@@ -69,10 +69,16 @@ Extended multi-UAV navigation for cooperative exploration.
 Integration with reinforcement learning for adaptive flight behavior.
 
 # Simulation Scenarios
-To evaluate the fast planner's performance, three scenarios were simulated using a long, 60-meter road. In each scenario, the system was assessed for potential collisions with the air vehicle. As illustrated in Figure \ref{fastplanner_sim}, the planned path is depicted by the green lines. The left side of each sub-figure shows a top-down view from the Gazebo model, while the right side displays the corresponding RVIZ visualization of the ESDF map and trajectory.
+To evaluate the fast planner's performance, three scenarios were simulated using a long, 60-meter road. In each scenario, the system was assessed for potential collisions with the air vehicle. As illustrated in Figure, the planned path is depicted by the green lines. The left side of each sub-figure shows a top-down view from the Gazebo model, while the right side displays the corresponding RVIZ visualization of the ESDF map and trajectory.
 
+<p align="center">
 <img src="resources/simscenario.png" alt="Simulation Scenarios" width="600"/>
+</p>
 
+Virtualization of the PointCloud data is only possible in RVIZ because of the data type saved by ORB-SLAM3. This data format, likely a proprietary binary format (".osa"), is difficult to interpret directly. RVIZ acts as a bridge to visualize this data, helping represent potential obstacles and empty paths within the forest environment. As depicted in Figure, in a 50x50 m forest area, the yellow points (point clouds), illustrate the possible places of the trees on the map. Pink and blue shapes are the ESDF map of the trees. Yellow points have more side of view than the yellow one (because ESDF uses depth information and small side view) so we can have more field of view information using ORB-SLAM3. Besides this, the ESDF map has distance information between the quadcopter and the tree. So, it gives really important data to draw the trajectory. In the ESDF map,  the pink color means that it is the most possible point air vehicle can hit, and the blues are the bushes which are the objects that have a low possibility of hitting. In the end, the green color is the ground which shows the takeoff point. 
+
+Furthermore, the Figure also has the position information of the camera and keyframe trajectory. The light orange color indicates the camera trajectory (estimated position) and the black dot line shows the keyframe trajectory. At some part in the camera, the trajectory fails to track which line goes to the initial point or follows a different track. After the SLAM detects a loop, then it merges the map and relocalizes the camera position. At that time, the keyframe trajectory fixes the path and gives the correct trajectory which belongs to the loop. As mentioned before, the most failed track is shown in the aggressive motion, or failing to merge the map can confuse the tracking part. In both scenarios, the right bottom part shows the same behavior. 
+ 
 
 <p align="center">
   <img src="resources/mediumslam.png" alt="Medium Dense Forest SLAM" width="400"/>
