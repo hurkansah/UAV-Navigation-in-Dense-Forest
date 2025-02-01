@@ -104,5 +104,8 @@ Virtualization of the PointCloud data is only possible in RVIZ because of the da
 Furthermore, the Figure also has the position information of the camera and keyframe trajectory. The light orange color indicates the camera trajectory (estimated position) and the black dot line shows the keyframe trajectory. At some part in the camera, the trajectory fails to track which line goes to the initial point or follows a different track. After the SLAM detects a loop, then it merges the map and relocalizes the camera position. At that time, the keyframe trajectory fixes the path and gives the correct trajectory which belongs to the loop. As mentioned before, the most failed track is shown in the aggressive motion, or failing to merge the map can confuse the tracking part. In both scenarios, the right bottom part shows the same behavior. 
  
 
+# Installation Guide: Autonomous UAV Navigation System
+This guide provides step-by-step instructions for installing the necessary dependencies, drivers, and software for the project.
 
+<!-- comment written in markdown -->
 
