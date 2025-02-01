@@ -53,7 +53,15 @@ Mzahana, Integration of Fast-Planner with PX4 autopilot for multi-rotor fast nav
 This is a really helpful implementation for understanding TF frames needed by fast-planner and integration of the geometric controller. 
 
 # Simulation
-![Autonomous UAV in Gazebo](resources/drone_gazebo.png) 
+[forest generator](https://github.com/hurkansah/forest_gen)
+hurkansah, a Random forest generator with using different types of bushes and trees to create test environments for Gazebo
+
+The process of generating the forest generation was modified and adapted to this project, from the forest generation script employed in Oleynikova et al. In their research, Oleynikova et al developed a script for creating randomized forests that are openly accessible for research objectives. This script plays a crucial role in uniformly selecting the position, direction, and density of the trees. Additionally, it generates the world description file.
+
+<p align="center">
+<img src="resources/drone_gazebo.png" alt="Autonomous UAV in Gazebo" width="500"/>
+</p>
+
 
 Simulation experiments were conducted using a desktop computer with an Nvidia RTX 3060 graphics card. To achieve better results, Nvidia CUDA and CUDNN plugins were utilized. The experiments were performed on Ubuntu 20.04 LTS and ROS Noetic within PX4’s Software-In-The-Loop (SITL) environment. The Gazebo simulator version 11.0 was used with a simulated Intel RealSense D435 depth camera plugin connected to the Forest Drone shown in Figure. 
 
@@ -68,6 +76,23 @@ Real-world testing with an actual drone platform.
 Extended multi-UAV navigation for cooperative exploration.
 Integration with reinforcement learning for adaptive flight behavior.
 
-![Medium Dense Forest SLAM](resources/mediumslam.png)
+# Simulation Scenarios
+To evaluate the fast planner's performance, three scenarios were simulated using a long, 60-meter road. In each scenario, the system was assessed for potential collisions with the air vehicle. As illustrated in Figure, the planned path is depicted by the green lines. The left side of each sub-figure shows a top-down view from the Gazebo model, while the right side displays the corresponding RVIZ visualization of the ESDF map and trajectory.
 
-![Spare Dense Forest SLAM](resources/spareslam.png)  
+<p align="center">
+<img src="resources/simscenario.png" alt="Simulation Scenarios" width="400"/>
+</p>
+
+Virtualization of the PointCloud data is only possible in RVIZ because of the data type saved by ORB-SLAM3. This data format, likely a proprietary binary format (".osa"), is difficult to interpret directly. RVIZ acts as a bridge to visualize this data, helping represent potential obstacles and empty paths within the forest environment. As depicted in Figure, in a 50x50 m forest area, the yellow points (point clouds), illustrate the possible places of the trees on the map. Pink and blue shapes are the ESDF map of the trees. Yellow points have more side of view than the yellow one (because ESDF uses depth information and small side view) so we can have more field of view information using ORB-SLAM3. Besides this, the ESDF map has distance information between the quadcopter and the tree. So, it gives really important data to draw the trajectory. In the ESDF map,  the pink color means that it is the most possible point air vehicle can hit, and the blues are the bushes which are the objects that have a low possibility of hitting. In the end, the green color is the ground which shows the takeoff point. 
+
+<p align="center">
+  <img src="resources/mediumslam.png" alt="Medium Dense Forest SLAM" width="400"/>
+  <img src="resources/spareslam.png" alt="Spare Dense Forest SLAM" width="400"/>
+</p>
+
+
+Furthermore, the Figure also has the position information of the camera and keyframe trajectory. The light orange color indicates the camera trajectory (estimated position) and the black dot line shows the keyframe trajectory. At some part in the camera, the trajectory fails to track which line goes to the initial point or follows a different track. After the SLAM detects a loop, then it merges the map and relocalizes the camera position. At that time, the keyframe trajectory fixes the path and gives the correct trajectory which belongs to the loop. As mentioned before, the most failed track is shown in the aggressive motion, or failing to merge the map can confuse the tracking part. In both scenarios, the right bottom part shows the same behavior. 
+ 
+
+
+
