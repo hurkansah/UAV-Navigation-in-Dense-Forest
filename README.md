@@ -67,3 +67,7 @@ Future Work
 Real-world testing with an actual drone platform.
 Extended multi-UAV navigation for cooperative exploration.
 Integration with reinforcement learning for adaptive flight behavior.
+
+![Medium Dense Forest SLAM](resources/mediumslam.png)
+
+![Spare Dense Forest SLAM](resources/spareslam.png)  
